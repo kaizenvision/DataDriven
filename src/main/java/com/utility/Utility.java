@@ -1,16 +1,21 @@
 package com.utility;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
 
+import jdk.nashorn.api.tree.Tree;
+import org.apache.commons.io.FileUtils;
 import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 
 import com.base.BaseClass;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 
 public class Utility extends BaseClass {
 	
@@ -94,6 +99,12 @@ public class Utility extends BaseClass {
 		}
 
 		return excelData;
+	}
+
+	public static void takeScreenShot(String fileName) throws IOException {
+		String path = projectPath+"/screenshots/"+fileName+".jpeg";
+		File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(screenshotFile, new File(path));
 	}
 
 }
