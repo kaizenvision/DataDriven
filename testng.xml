@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Sanity">
+<groups>
+	<run>
+		<include name="mygroup"></include>
+	</run>
+</groups>
   <test thread-count="5" name="Test">
     <classes>
+     <class name="com.testclasses.LoginTest">
+     	
      
-      <class name="com.testclasses.DemoTests"/>
-     
+     </class>
+      <class name="com.testclasses.DemoTests">
+      	<methods>
+      		<exclude name="test2"></exclude>
+      	</methods>
+      </class>
+     <class name="com.testclasses.HomePageTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Sanity -->

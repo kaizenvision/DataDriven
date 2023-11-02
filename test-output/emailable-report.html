@@ -8,16 +8,21 @@
 <body>
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
-<tr><th colspan="8">Sanity</th></tr>
-<tr><td><a href="#t0">Test</a></td><td class="num">6</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">403</td><td></td><td></td></tr>
+<tr><th colspan="8">Suite</th></tr>
+<tr><td><a href="#t0">Test</a></td><td class="num">4</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">38,156</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Sanity</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="6">com.testclasses.DemoTests</td><td><a href="#m0">test</a></td><td rowspan="3">1698200914522</td><td rowspan="3">2</td></tr><tr class="passedeven"><td><a href="#m1">test</a></td></tr><tr class="passedeven"><td><a href="#m2">test</a></td></tr><tr class="passedeven"><td><a href="#m3">test2</a></td><td rowspan="1">1698200914442</td><td rowspan="1">22</td></tr><tr class="passedeven"><td><a href="#m4">test3</a></td><td rowspan="1">1698200914489</td><td rowspan="1">4</td></tr><tr class="passedeven"><td><a href="#m5">test4</a></td><td rowspan="1">1698200914508</td><td rowspan="1">5</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="1">com.testclasses.LoginTest</td><td><a href="#m0">tearDown</a></td><td rowspan="1">1698631294723</td><td rowspan="1">-1698631294723</td></tr><tr><th colspan="4">Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="4">com.testclasses.LoginTest</td><td><a href="#m1">loginTest</a></td><td rowspan="4">1698631281622</td><td rowspan="4">5991</td></tr><tr class="passedeven"><td><a href="#m2">loginTest</a></td></tr><tr class="passedeven"><td><a href="#m3">loginTest</a></td></tr><tr class="passedeven"><td><a href="#m4">loginTest</a></td></tr></tbody>
 </table>
-<h2>Test</h2><h3 id="m0">com.testclasses.DemoTests#test</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">com.testclasses.DemoTests#test</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">com.testclasses.DemoTests#test</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m3">com.testclasses.DemoTests#test2</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m4">com.testclasses.DemoTests#test3</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m5">com.testclasses.DemoTests#test4</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Test</h2><h3 id="m0">com.testclasses.LoginTest#tearDown</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.testng.TestNGException: 
+Can inject only one of &lt;ITestContext, XmlTest&gt; into a @AfterClass annotated tearDown.
+For more information on native dependency injection please refer to https://testng.org/doc/documentation-main.html#native-dependency-injection
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+... Removed 7 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">com.testclasses.LoginTest#loginTest</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{password=dsnfm, username=nndvd}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">com.testclasses.LoginTest#loginTest</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{password=admin123, username=Admin}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">com.testclasses.LoginTest#loginTest</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{password=nmb, username=mbmbm}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">com.testclasses.LoginTest#loginTest</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{password=bmbm, username=dsd}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

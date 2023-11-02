@@ -1,5 +1,7 @@
 package com.testclasses;
 
+import com.rerun.FailedRerun;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class DemoTests {
@@ -18,14 +20,15 @@ public class DemoTests {
         System.out.println("i am in priority -2");
     }
 
-    @Test(groups = {"regression"})
+    @Test(groups = {"regression","mygroup"})
     public void test3(){
         System.out.println("i am in regression group");
     }
 
-    @Test(groups = {"sanity"})
+    @Test(groups = {"sanity"}, retryAnalyzer = FailedRerun.class)
     public void test4(){
         System.out.println("i am in sanity group");
+        Assert.fail();
     }
 
 }

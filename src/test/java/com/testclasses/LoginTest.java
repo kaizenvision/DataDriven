@@ -8,9 +8,14 @@ import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
+import org.testng.ITestResult;
 import org.testng.annotations.*;
 import org.testng.asserts.SoftAssert;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.base.BaseClass;
 import com.myexceptin.UserNotFoundException;
 import com.pom.LoginPom;
@@ -20,28 +25,47 @@ import com.utility.Utility;
 public class LoginTest extends BaseClass {
 	
 	
+	ExtentSparkReporter extentSparkReporter ;
+	ExtentReports extentReports ;
+	ExtentTest logger;
+	
 	
 	@BeforeClass
-	public void setUp() {
+	@Parameters({"browser"})
+	public void setUp(String browser) {
 		try {
-			lauchTheWeb();
+			lauchTheWeb(browser);
+			extentSparkReporter = new ExtentSparkReporter(projectPath+"//extentReport//testReport.html");
+			extentReports = new ExtentReports();
+			extentReports.attachReporter(extentSparkReporter);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 	
+	@AfterMethod
+	public void attachScreenShot(ITestResult result) {
+		Utility.implictWeight();
+		logger.addScreenCaptureFromPath(projectPath+"/screenshots/"+result.getName(), result.getTestName());
+		
+	}
+	
 	@AfterClass
 	public void tearDown() {
 		Utility.implictWeight();
+		extentReports.flush();
 		driver.quit();
 	}
 
 	@Test(dataProvider = "logindata", groups = {"sanity"})
 	public void loginTest(Map<String, String> data) throws InterruptedException {
+		logger = extentReports.createTest("loginTest");
 		LoginPom loginPom = new LoginPom();
 		loginPom.setInputUsername(data.get("username"));
 		loginPom.setInputPassword(data.get("password"));
+		logger.log(Status.INFO, "running test with username "+ data.get("username"));
+		logger.log(Status.INFO, "running test with password "+ data.get("password"));
 		loginPom.loginButtonClick();
 		Thread.sleep(5000);
 		String actual = driver.getCurrentUrl();

@@ -11,7 +11,7 @@ public class MyListner implements ITestListener {
     @Override
     public void onTestSuccess(ITestResult result) {
         try {
-            Utility.takeScreenShot(result.getTestName());
+            Utility.takeScreenShot(result.getName());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
